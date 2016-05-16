@@ -25,7 +25,8 @@ module.exports = {
           "./build/vendor/angular.min.js",
           "./build/vendor/**/*.js",
           "./build/app/**/*.js",
-          "./build/assets/css/**/*.css"
+          "./build/assets/css/**/*.css",
+          "./build/vendor/**/*.css"
         ],
         // the index.html
         html: ['src/index.html'],
@@ -44,13 +45,19 @@ module.exports = {
     },
 
     vendor_files: {
-        // the vendor/ needs to be prefixed by the task
+        // the node_modules/ needs to be prefixed by the task
         js: [
-          'node_modules/jquery/dist/jquery.min.js',
-          'node_modules/angular/angular.min.js',
-          'node_modules/angular-ui-router/release/angular-ui-router.min.js'
+          'jquery/dist/jquery.min.js',
+          'angular/angular.min.js',
+          'angular-ui-router/release/angular-ui-router.min.js',
+          'angular-material/angular-material.min.js',
+          'angular-animate/angular-animate.min.js',
+          'angular-aria/angular-aria.min.js',
+          'angular-messages/angular-messages.min.js'
         ],
-        css: [],
+        css: [
+          'angular-material/angular-material.min.css'
+        ],
         assets: []
     }
 };

@@ -1,5 +1,6 @@
 angular.module('app', [
     'ui.router',
+    'ngMaterial',
     'templates-app'
 ])
   .component('app', {
