@@ -4,14 +4,14 @@ var gulp = require('gulp'),
     inject = require("gulp-inject"),
     runSequence = require('run-sequence'),
     rename = require("gulp-rename"),
-    nodemon = require('gulp-nodemon'),
     concat = require('gulp-concat'),
     html2js = require("gulp-ng-html2js"),
     ngmin = require("gulp-ng-annotate"),
     _ = require('lodash'),
     uglify = require('gulp-uglify'),
     pkg = require('./package.json'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    browserSync = require('browser-sync').create();
 
 
 var files = require('./gulp/gulp.config.js');
@@ -52,14 +52,14 @@ gulp.task('build-src', function (callback) {
  Use 'del', a standard npm lib, to completely delete the build dir
  */
 gulp.task('clean', function (callback) {
-    del(['./build'], {force: true}, callback)
+    return del(['./build'], {force: true}, callback);
 });
 
 /*
  Use 'del', a standard npm lib, to completely delete the bin (production) dir
  */
 gulp.task('clean-bin', function (callback) {
-    del(['./bin'], {force: true}, callback)
+    return del(['./bin'], {force: true}, callback);
 });
 
 gulp.task('copy-build', ['copy-assets', 'copy-app-js', 'copy-vendor-js']);
@@ -75,7 +75,7 @@ gulp.task('copy-app-js', function () {
 });
 
 gulp.task('copy-vendor-js', function () {
-  return gulp.src(files.vendor_files.js, {cwd: 'vendor/**'})
+  return gulp.src(files.vendor_files.js)
     .pipe(gulp.dest('./build/vendor'));
 });
 
@@ -96,7 +96,7 @@ gulp.task('html2js', function () {
 });
 
 gulp.task('less', function () {
-    return gulp.src('./src/less/main.less')
+    return gulp.src(files.app_files.styles)
         .pipe(less({
             compile: true,
             compress: false,
@@ -104,12 +104,12 @@ gulp.task('less', function () {
             noIDs: false,
             zeroUnits: false
         }))
-        .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
+        // .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
         .pipe(gulp.dest('./build/assets/css/'));
 });
 
 gulp.task('less-compile', function () {
-    return gulp.src('./src/less/main.less')
+    return gulp.src(files.app_files.styles)
         .pipe(less({
             compile: true,
             compress: true,
@@ -117,7 +117,7 @@ gulp.task('less-compile', function () {
             noIDs: false,
             zeroUnits: false
         }))
-        .pipe(rename(pkg.name + '-' + pkg.version + '.css'))
+        .pipe(concat(pkg.name + '-' + pkg.version + '.css'))
         .pipe(gulp.dest('./bin/assets/css/'));
 });
 
@@ -131,7 +131,8 @@ gulp.task('index', function () {
             gulp.src(files.app_files.tpl_src), {
                 ignorePath: 'build'
             }))
-        .pipe(gulp.dest("./build"));
+        .pipe(gulp.dest("./build"))
+        .pipe(browserSync.stream());
 });
 
 /*
@@ -165,10 +166,11 @@ gulp.task('concat', function () {
 });
 
 gulp.task('serve', function () {
-    nodemon({script: files.server, watch: 'server/'})
-        .on('restart', function () {
-            console.log('restarted!')
-        })
+  browserSync.init({
+      server: {
+          baseDir: "./build"
+      }
+  });
 });
 
 gulp.task('compile', function (callback) {
@@ -197,7 +199,3 @@ gulp.task('watch', function () {
 
     gulp.watch('./src/config/**/*.json', ['config-build']);
 });
-
-
-
-
