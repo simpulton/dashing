@@ -10,4 +10,3 @@ angular.module('home', [])
         template: '<home class="mdl-grid demo-content"></home>'
     });
   });
-;

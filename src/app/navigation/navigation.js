@@ -12,10 +12,10 @@ angular.module('navigation', [])
         var capitalName = toState.name.charAt(0).toUpperCase() + toState.name.slice(1);
         $ctrl.routeName = capitalName;
       });
-    }
+    };
 
-    this.doSearch = function doSearch() {
+    this.doSearch = function() {
       AppService.performSearch(this.search);  
-    }
+    };
   })
 ;

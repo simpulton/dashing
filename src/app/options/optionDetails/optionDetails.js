@@ -10,4 +10,3 @@ angular.module('optionDetails', [])
         template: '<option-details class="mdl-grid demo-content"></option-details>'
     });
   });
-;
