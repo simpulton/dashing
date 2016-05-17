@@ -8,20 +8,18 @@ angular.module('app', [
     'options',
     'svgs',
     'templates-app'
-])
+  ])
   .component('app', {
     selector: 'app',
     templateUrl: 'app.html'
   })
-  .config(function ($stateProvider, $urlRouterProvider) {
-      $stateProvider
-          //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
-          .state('app', {
-              url: '',
-              abstract: true
-          })
-      ;
+  .config(function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+    //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
+      .state('app', {
+      url: '',
+      abstract: true
+    });
 
-      $urlRouterProvider.otherwise('/');
-  })
-;
+    $urlRouterProvider.otherwise('/');
+  });
