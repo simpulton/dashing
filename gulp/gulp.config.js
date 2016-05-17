@@ -36,14 +36,6 @@ module.exports = {
         ngmin_js: ['./bin/**/*.js']
     },
 
-    test_files: {
-        js: [
-            'node_modules/jquery/dist/jquery.js',
-            'node_modules/angular-mocks/angular-mocks.js',
-            'node_modules/jasmine-jquery/lib/jasmine-jquery.js'
-        ]
-    },
-
     vendor_files: {
         // the node_modules/ needs to be prefixed by the task
         js: [

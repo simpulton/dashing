@@ -4,11 +4,12 @@
   "description": "eggly =====",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "angular-mocks": "^1.5.5",
     "body-parser": "^1.11.0",
     "bootstrap": "^3.3.2",
     "browser-sync": "^2.12.8",
@@ -27,8 +28,14 @@
     "gulp-rename": "^1.2.0",
     "gulp-uglify": "^1.1.0",
     "http": "0.0.0",
+    "jasmine-core": "^2.4.1",
     "jshint": "^2.9.2",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^1.0.2",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.0",
     "lodash": "^4.12.0",
+    "phantomjs-prebuilt": "^2.1.7",
     "run-sequence": "^1.0.2"
   },
   "dependencies": {

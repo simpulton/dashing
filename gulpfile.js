@@ -12,8 +12,8 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     pkg = require('./package.json'),
     jshint = require('gulp-jshint'),
-    browserSync = require('browser-sync').create();
-
+    browserSync = require('browser-sync').create(),
+    Server = require('karma').Server;
 
 var files = require('./gulp/gulp.config.js');
 
@@ -62,6 +62,7 @@ gulp.task('clean', function (callback) {
 gulp.task('clean-bin', function (callback) {
     return del(['./bin'], {force: true}, callback);
 });
+
 
 gulp.task('copy-build', ['copy-vendor-assets', 'copy-assets', 'copy-app-js', 'copy-vendor-js']);
 
@@ -182,6 +183,12 @@ gulp.task('compile', function (callback) {
         'less-compile',
         'index-compile',
         callback);
+});
+
+gulp.task('test', function (done) {
+  new Server({
+    configFile: __dirname + '/karma.conf.js'
+  }, done).start();
 });
 
 gulp.task('lint', function() {

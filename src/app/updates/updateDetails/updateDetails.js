@@ -1,4 +1,4 @@
-angular.module('updateDetails', ['stocks'])
+angular.module('updateDetails', [])
   .component('updateDetails', {
     selector: 'updateDetails',
     templateUrl: 'updates/updateDetails/updateDetails.html',
@@ -7,7 +7,7 @@ angular.module('updateDetails', ['stocks'])
   .controller('UpdateDetailsController', function UpdateDetailsController($http, StockService, $scope) {
     var $ctrl = this;
 
-    function getStocks() {
+    $ctrl.getStocks = function() {
       StockService.getStocks()
         .then(function success(results) {
           $ctrl.data = results;
@@ -17,13 +17,13 @@ angular.module('updateDetails', ['stocks'])
         });
     }
 
-    function searchCallback(event, query) {
+    $ctrl.searchCallback = function(event, query) {
       $ctrl.query = query;
     }
 
-    this.$onInit = function $onInit() {
-      getStocks();
-      $scope.$on('search', searchCallback);
+    $ctrl.$onInit = function $onInit() {
+      $ctrl.getStocks();
+      $scope.$on('search', $ctrl.searchCallback);
     }
   })
   .config(function($stateProvider) {

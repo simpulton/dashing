@@ -19,7 +19,6 @@ angular.module('app', [
     $stateProvider
     //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
       .state('app', {
-        url: '',
         abstract: true
     });
 
