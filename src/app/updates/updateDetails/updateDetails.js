@@ -15,16 +15,16 @@ angular.module('updateDetails', [])
         .catch(function error(error) {
           console.log(error);
         });
-    }
+    };
 
     $ctrl.searchCallback = function(event, query) {
       $ctrl.query = query;
-    }
+    };
 
-    $ctrl.$onInit = function $onInit() {
+    $ctrl.$onInit = function() {
       $ctrl.getStocks();
       $scope.$on('search', $ctrl.searchCallback);
-    }
+    };
   })
   .config(function($stateProvider) {
     $stateProvider

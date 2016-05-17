@@ -10,7 +10,7 @@ describe("Unit: services", function() {
 
       mockResponse = {query: {results: {quote: []}}};
       cachingResponse = {data: mockResponse};
-    }))
+    }));
 
     afterEach(inject(function($httpBackend) {
       $httpBackend.verifyNoOutstandingExpectation();
