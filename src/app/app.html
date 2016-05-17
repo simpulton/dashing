@@ -1,24 +1,16 @@
-<md-toolbar layout="row">
-  <h1 flex>Welcome!</h1>
-</md-toolbar>
-
-<div flex layout="row" layout-fill="">
-  <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
-    <md-list>
-      <md-list-item>
-        <md-button flex>
-          <!-- <md-icon md-svg-src="./assets/svg/avatar-1.svg" class="avatar"></md-icon> -->
-          Lia Luogo
-        </md-button>
-      </md-list-item>
-      <md-list-item >
-        <md-button flex>
-         <!-- <md-icon md-svg-src="./assets/svg/avatar-4.svg" class="avatar"></md-icon> -->
-          Lawrence Ray
-        </md-button>
-      </md-list-item>
-
-    </md-list>
-  </md-sidenav>
-  <md-content flex id="content"></md-content>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+  <navigation class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600"></navigation>
+  <side-nav class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50"></side-nav>
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div class="mdl-grid demo-content">
+      <charts class="demo-charts mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid"></charts>
+      <graphs class="demo-graphs mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--8-col"></graphs>
+      <div class="demo-cards mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-grid mdl-grid--no-spacing">
+        <updates class="demo-updates mdl-card mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--12-col-desktop"></updates>
+        <div class="demo-separator mdl-cell--1-col"></div>
+        <options class="demo-options mdl-card mdl-color--deep-purple-500 mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-cell--3-col-tablet mdl-cell--12-col-desktop"></options>
+      </div>
+    </div>
+  </main>
 </div>
+<svgs></svgs>

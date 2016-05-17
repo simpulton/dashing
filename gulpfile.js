@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     html2js = require("gulp-ng-html2js"),
     ngmin = require("gulp-ng-annotate"),
+    flatten = require('gulp-flatten'),
     _ = require('lodash'),
     uglify = require('gulp-uglify'),
     pkg = require('./package.json'),
@@ -109,20 +110,14 @@ gulp.task('less', function () {
             noIDs: false,
             zeroUnits: false
         }))
+        .pipe(flatten())
         .pipe(gulp.dest('./build/assets/css/'));
 });
 
 gulp.task('less-compile', function () {
-    return gulp.src(files.app_files.styles)
-        .pipe(less({
-            compile: true,
-            compress: true,
-            noUnderscores: false,
-            noIDs: false,
-            zeroUnits: false
-        }))
-        .pipe(concat(pkg.name + '-' + pkg.version + '.css'))
-        .pipe(gulp.dest('./bin/assets/css/'));
+  return gulp.src(['./build/**/*.css'])
+    .pipe(concat(pkg.name + '-' + pkg.version + '.css'))
+    .pipe(gulp.dest('./bin/assets/css/'));
 });
 
 /*

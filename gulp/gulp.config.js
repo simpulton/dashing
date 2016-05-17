@@ -50,13 +50,10 @@ module.exports = {
           'jquery/dist/jquery.min.js',
           'angular/angular.min.js',
           'angular-ui-router/release/angular-ui-router.min.js',
-          'angular-material/angular-material.min.js',
-          'angular-animate/angular-animate.min.js',
-          'angular-aria/angular-aria.min.js',
-          'angular-messages/angular-messages.min.js'
+          'material-design-lite/material.min.js'
         ],
         css: [
-          'angular-material/angular-material.min.css'
+          'material-design-lite/material.min.css'
         ],
         assets: []
     }

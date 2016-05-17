@@ -1,6 +1,12 @@
 angular.module('app', [
     'ui.router',
-    'ngMaterial',
+    'sideNav',
+    'navigation',
+    'charts',
+    'graphs',
+    'updates',
+    'options',
+    'svgs',
     'templates-app'
 ])
   .component('app', {
@@ -10,7 +16,7 @@ angular.module('app', [
   .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider
           //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
-          .state('eggly', {
+          .state('app', {
               url: '',
               abstract: true
           })
