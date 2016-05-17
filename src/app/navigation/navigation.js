@@ -4,7 +4,7 @@ angular.module('navigation', [])
     templateUrl: 'navigation/navigation.html',
     controller: 'NavigationController'
   })
-  .controller('NavigationController', function NavigationController($rootScope) {
+  .controller('NavigationController', function NavigationController($rootScope, AppService) {
     var $ctrl = this;
 
     this.$onInit = function () {
@@ -12,6 +12,10 @@ angular.module('navigation', [])
         var capitalName = toState.name.charAt(0).toUpperCase() + toState.name.slice(1);
         $ctrl.routeName = capitalName;
       });
+    }
+
+    this.doSearch = function doSearch() {
+      AppService.performSearch(this.search);  
     }
   })
 ;

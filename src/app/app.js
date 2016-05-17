@@ -8,6 +8,7 @@ angular.module('app', [
     'updates',
     'options',
     'svgs',
+    'services',
     'templates-app'
   ])
   .component('app', {
@@ -22,5 +23,5 @@ angular.module('app', [
         abstract: true
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
   });
