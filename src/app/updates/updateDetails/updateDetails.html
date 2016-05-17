@@ -14,14 +14,14 @@
     </thead>
     <tbody>
       <tr ng-repeat="quote in $ctrl.data | limitTo: 200 | filter: $ctrl.query">
-        <td class="mdl-data-table__cell--non-numeric">{{quote.Symbol}}</td>
-        <td>{{quote.Date | date: 'MMM dd, yyyy'}}</td>
-        <td>{{quote.Open | number}}</td>
-        <td>{{quote.High | number}}</td>
-        <td>{{quote.Low | number}}</td>
-        <td>{{quote.Close | number}}</td>
-        <td>{{quote.Volume | number}}</td>
-        <td>{{quote.Adj_Close | number}}</td>
+        <td class="mdl-data-table__cell--non-numeric">{{::quote.Symbol}}</td>
+        <td>{{::quote.Date | date: 'MMM dd, yyyy'}}</td>
+        <td>{{::quote.Open | number}}</td>
+        <td>{{::quote.High | number}}</td>
+        <td>{{::quote.Low | number}}</td>
+        <td>{{::quote.Close | number}}</td>
+        <td>{{::quote.Volume | number}}</td>
+        <td>{{::quote.Adj_Close | number}}</td>
       </tr>
     </tbody>
   </table>
