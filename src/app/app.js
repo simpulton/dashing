@@ -2,6 +2,7 @@ angular.module('app', [
     'ui.router',
     'sideNav',
     'navigation',
+    'home',
     'charts',
     'graphs',
     'updates',
@@ -17,8 +18,8 @@ angular.module('app', [
     $stateProvider
     //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
       .state('app', {
-      url: '',
-      abstract: true
+        url: '',
+        abstract: true
     });
 
     $urlRouterProvider.otherwise('/');
