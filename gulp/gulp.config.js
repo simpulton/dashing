@@ -24,10 +24,10 @@ module.exports = {
           "./build/vendor/jquery*.js",
           "./build/vendor/angular.min.js",
           "./build/vendor/**/*.js",
+          "./build/app/**/*.js",
           "./build/assets/css/**/*.css",
           "./build/vendor/**/*.css"
         ],
-        tpl_app: "./build/app/**/*.js",
         // the index.html
         html: ['src/index.html'],
         styles: ['src/**/*.less'],

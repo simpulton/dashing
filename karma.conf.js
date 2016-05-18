@@ -20,8 +20,6 @@ module.exports = function(config) {
       'node_modules/angular-ui-router/release/angular-ui-router.min.js',
       'src/app/**/*.html',
       'src/app/**/*.js',
-      // 'src/app/**/*.controller.js',
-      // 'src/app/**/*.component.js',
       'src/app/**/*.spec.js'
     ],
 
@@ -70,7 +68,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

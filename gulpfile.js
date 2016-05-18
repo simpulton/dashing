@@ -131,14 +131,10 @@ gulp.task('less-compile', function () {
  from the "build" dir.
  */
 gulp.task('index', function () {
-    var tpl_files = merge(
-      gulp.src(files.app_files.tpl_src),
-      gulp.src(files.app_files.tpl_app).pipe(angularFilesort())
-    );
 
     return gulp.src('./src/index.html')
         .pipe(inject(
-            tpl_files, {
+            gulp.src(files.app_files.tpl_src), {
                 ignorePath: 'build'
             }))
         .pipe(gulp.dest("./build"))
