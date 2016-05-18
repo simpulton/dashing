@@ -2,7 +2,7 @@ var portfolioPerformance = {
   selector: 'portfolioPerformance',
   bindings: {},
   controller: 'PortfolioPerformanceController',
-  templateUrl: 'portfolios/portfolioDetails/portfolioPerformance/portfolioPerformance.html'
+  templateUrl: 'portfolios/portfolioPerformance/portfolioPerformance.html'
 }
 
 angular.module('portfolioPerformance')

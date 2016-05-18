@@ -1,1 +1,1 @@
-angular.module('portfolioDetails', ['portfolioPerformance']);
+angular.module('portfolioDetails', []);

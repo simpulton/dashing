@@ -42,10 +42,13 @@ module.exports = {
           'jquery/dist/jquery.min.js',
           'angular/angular.min.js',
           'angular-ui-router/release/angular-ui-router.min.js',
-          'material-design-lite/material.min.js'
+          'material-design-lite/material.min.js',
+          'chart.js/dist/Chart.js',
+          'angular-chart.js/dist/angular-chart.js'
         ],
         css: [
-          'material-design-lite/material.min.css'
+          'material-design-lite/material.min.css',
+          'angular-chart.js/dist/angular-chart.min.css'
         ],
         assets: []
     },
