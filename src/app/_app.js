@@ -12,6 +12,7 @@ angular.module('app', [
   'ui.router',
   'stocks',
   'portfolios',
+  'home',
   'templates-app'
 ])
   .config(config);
