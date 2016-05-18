@@ -1,14 +1,5 @@
 angular.module('app', [
     'ui.router',
-    'sideNav',
-    'navigation',
-    'home',
-    'charts',
-    'graphs',
-    'updates',
-    'options',
-    'svgs',
-    'services',
     'templates-app'
   ])
   .component('app', {

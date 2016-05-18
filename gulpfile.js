@@ -8,12 +8,17 @@ var gulp = require('gulp'),
     html2js = require("gulp-ng-html2js"),
     ngmin = require("gulp-ng-annotate"),
     flatten = require('gulp-flatten'),
+    template = require('gulp-template'),
+    yargs = require('yargs'),
     _ = require('lodash'),
     uglify = require('gulp-uglify'),
     pkg = require('./package.json'),
     jshint = require('gulp-jshint'),
     browserSync = require('browser-sync').create(),
-    Server = require('karma').Server;
+    path = require('path'),
+    Server = require('karma').Server,
+    merge = require('merge-stream'),
+    angularFilesort = require('gulp-angular-filesort');
 
 var files = require('./gulp/gulp.config.js');
 
@@ -126,9 +131,14 @@ gulp.task('less-compile', function () {
  from the "build" dir.
  */
 gulp.task('index', function () {
+    var tpl_files = merge(
+      gulp.src(files.app_files.tpl_src),
+      gulp.src(files.app_files.tpl_app).pipe(angularFilesort())
+    );
+
     return gulp.src('./src/index.html')
         .pipe(inject(
-            gulp.src(files.app_files.tpl_src), {
+            tpl_files, {
                 ignorePath: 'build'
             }))
         .pipe(gulp.dest("./build"))
@@ -204,4 +214,24 @@ gulp.task('watch', function () {
     gulp.watch(files.app_files.styles, ['less', 'index']);
 
     gulp.watch('./src/config/**/*.json', ['config-build']);
+});
+
+gulp.task('component', () => {
+  const cap = (val) => {
+    return val.charAt(0).toUpperCase() + val.slice(1);
+  };
+  const name = yargs.argv.name;
+  const parentPath = yargs.argv.parent || '';
+  const destPath = path.join('./src/app', parentPath, name);
+
+  return gulp.src(files.blank_templates)
+    .pipe(template({
+      name: name,
+      upCaseName: cap(name),
+      templatePath: destPath.replace('src/app/', '')
+    }))
+    .pipe(rename((path) => {
+      path.basename = path.basename.replace('temp', name);
+    }))
+    .pipe(gulp.dest(destPath));
 });

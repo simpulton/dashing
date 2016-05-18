@@ -1,6 +1,6 @@
 describe('Unit: App', function() {
-  beforeEach(module('app'));
   beforeEach(module('ui.router'));
+  beforeEach(module('app'));
 
   describe('App Abstract Route', function() {
     var $state,
@@ -19,13 +19,5 @@ describe('Unit: App', function() {
       expect(config.abstract).toBeTruthy();
       expect(config.url).toBeUndefined();
     });
-
-    it('should redirect to /home on undefined state change', function () {
-      $state.go('updates');
-      $rootScope.$digest();
-      $location.path('doesNotExist');
-      $rootScope.$digest();
-      expect($state.current.name).toEqual('home');
-    })
   });
 });

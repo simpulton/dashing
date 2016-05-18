@@ -19,8 +19,10 @@ module.exports = function(config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-ui-router/release/angular-ui-router.min.js',
       'src/app/**/*.html',
-      'src/app/**/*.spec.js',
-      'src/app/**/*.js'
+      'src/app/**/*.js',
+      // 'src/app/**/*.controller.js',
+      // 'src/app/**/*.component.js',
+      'src/app/**/*.spec.js'
     ],
 
     ngHtml2JsPreprocessor: {
@@ -68,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
