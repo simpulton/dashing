@@ -1,4 +1,4 @@
-function PortfolioPerformanceController() {
+function PerformanceController() {
   var $ctrl = this;
 
   $ctrl.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
@@ -10,5 +10,5 @@ function PortfolioPerformanceController() {
   ];
 }
 
-angular.module('portfolioPerformance')
-  .controller('PortfolioPerformanceController', PortfolioPerformanceController);
+angular.module('performance')
+  .controller('PerformanceController', PerformanceController);

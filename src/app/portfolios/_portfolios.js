@@ -13,14 +13,17 @@ function config($stateProvider) {
           '<ui-view class="mdl-cell--12-col"></ui-view>',
         '</div>'
       ].join('')
-  });
+    })
+    .state('portfolios.performance', {
+      url: '/performance',
+      template: '<performance></performance>'
+    });
 }
 
 angular.module('portfolios', [
   'portfolioList',
   'portfolioDetails',
   'portfoliosByRisk',
-  'activePortfolios',
-  'portfolioPerformance'
+  'activePortfolios'
 ])
   .config(config);

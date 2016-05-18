@@ -25,8 +25,8 @@ module.exports = {
           "./build/vendor/angular.min.js",
           "./build/vendor/**/*.js",
           "./build/app/**/*.js",
-          "./build/assets/css/**/*.css",
-          "./build/vendor/**/*.css"
+          "./build/vendor/**/*.css",
+          "./build/assets/css/**/*.css"
         ],
         // the index.html
         html: ['src/index.html'],
