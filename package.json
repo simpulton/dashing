@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "angular": "^1.5.5",
+    "angular-chart.js": "^1.0.0-alpha6",
     "angular-messages": "^1.5.5",
     "angular-ui-router": "^0.3.0",
     "jquery": "^2.2.3",
