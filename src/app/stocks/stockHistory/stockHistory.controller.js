@@ -4,7 +4,7 @@ function StockHistoryController(StockService, SymbolService, $filter, $scope, $s
   function getStockHistory() {
     StockService.getStocks($ctrl.currentSymbol)
     .then(function (history) {
-      $ctrl.history = $filter('limitTo')(history.data.query.results.quote);
+      $ctrl.history = $filter('limitTo')(history.data, 10);
     })
     .catch(function (error) {
       console.log(error);

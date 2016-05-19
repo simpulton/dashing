@@ -43,5 +43,28 @@
     1,
     2,
     3
+  ],
+  "stocks": [
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "AAPL", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "MSFT", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033},
+    {"Symbol": "GOOG", "Date": "2016-01-01", "Open": 536, "Close": 555, "Volume": 1529033}
   ]
 }
