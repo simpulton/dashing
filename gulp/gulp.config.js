@@ -48,7 +48,7 @@ module.exports = {
           'angular-chart.js/dist/angular-chart.js'
         ],
         css: [
-          'material-design-lite/material.min.css',
+          // 'material-design-lite/material.min.css',
           'angular-chart.js/dist/angular-chart.min.css'
         ],
         assets: []

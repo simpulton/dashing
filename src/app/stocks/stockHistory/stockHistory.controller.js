@@ -13,6 +13,7 @@ function StockHistoryController(StockService, SymbolService, $filter, $scope, $s
 
   $ctrl.$onInit = function () {
     $ctrl.currentSymbol = SymbolService.getCurrentSymbol() || 'AAPL';
+    $ctrl.isHomeState = $state.is('home');
 
     if ($state.is('home')) {
       getStockHistory();
