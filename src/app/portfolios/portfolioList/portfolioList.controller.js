@@ -17,6 +17,7 @@ function PortfolioListController(PortfolioService, $scope, $state) {
   };
 
   $ctrl.deletePortfolio = function (e, id) {
+    e.preventDefault();
     e.stopPropagation();
 
     PortfolioService.delete(id)

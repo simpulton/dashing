@@ -1,13 +1,47 @@
 {
   "portfolios": [
-    {"id": 1, "name": "Portfolio the First", "symbol": "MSFT", "risk": 1, "active": false},
-    {"id": 2, "name": "Portfolio the Second", "symbol": "AAPL", "risk": 3, "active": true},
-    {"id": 3, "name": "Portfolio the Third", "symbol": "MSFT", "risk": 2, "active": true}
+    {
+      "id": 1,
+      "name": "Portfolio the First",
+      "symbol": "MSFT",
+      "risk": 1,
+      "active": false
+    },
+    {
+      "id": 2,
+      "name": "Portfolio the Second",
+      "symbol": "AAPL",
+      "risk": 3,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Portfolio the Third",
+      "symbol": "MSFT",
+      "risk": 1,
+      "active": true
+    }
   ],
   "symbols": [
-    {"id": 1, "code": "MSFT", "entity": "Microsoft"},
-    {"id": 2, "code": "AAPL", "entity": "Apple"},
-    {"id": 3, "code": "GOOG", "entity": "Google"}
+    {
+      "id": 1,
+      "code": "MSFT",
+      "entity": "Microsoft"
+    },
+    {
+      "id": 2,
+      "code": "AAPL",
+      "entity": "Apple"
+    },
+    {
+      "id": 3,
+      "code": "GOOG",
+      "entity": "Google"
+    }
   ],
-  "risks": [1,2,3]
+  "risks": [
+    1,
+    2,
+    3
+  ]
 }
