@@ -1,14 +1,14 @@
-describe("Unit: services", function() {
-  beforeEach(module(function($provide) {
+describe("Unit: services", function () {
+  beforeEach(module(function ($provide) {
     $provide.value('ENDPOINT_URI', '');
   }));
-  
+
   beforeEach(module('services'));
 
-  describe('PortfolioService', function() {
+  describe('PortfolioService', function () {
     var PortfolioService, $httpBackend, mockResponse, $rootScope;
 
-    beforeEach(inject(function(_PortfolioService_, _$httpBackend_, _$rootScope_) {
+    beforeEach(inject(function (_PortfolioService_, _$httpBackend_, _$rootScope_) {
       PortfolioService = _PortfolioService_;
       $httpBackend = _$httpBackend_;
       $rootScope = _$rootScope_;
@@ -16,18 +16,18 @@ describe("Unit: services", function() {
       mockResponse = [];
     }));
 
-    afterEach(inject(function($httpBackend) {
+    afterEach(inject(function ($httpBackend) {
       $httpBackend.verifyNoOutstandingExpectation();
       $httpBackend.verifyNoOutstandingRequest();
     }));
 
-    it('`all` should retrieve portfolios', function() {
+    it('`all` should retrieve portfolios', function () {
       $httpBackend.when('GET', '/portfolios').respond(mockResponse);
 
       var promise = PortfolioService.all();
       $httpBackend.flush();
 
-      promise.then(function(result) {
+      promise.then(function (result) {
         expect(result.data).toEqual([]);
       });
     });

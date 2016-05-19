@@ -3,12 +3,12 @@ function StockHistoryController(StockService, $filter) {
 
   function getStockHistory() {
     StockService.getStocks($ctrl.currentSymbol)
-    .then(function (history) {
-      $ctrl.history = $filter('limitTo')(history.data.query.results.quote, 7);
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+      .then(function (history) {
+        $ctrl.history = $filter('limitTo')(history.data.query.results.quote, 7);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   $ctrl.$onInit = function () {

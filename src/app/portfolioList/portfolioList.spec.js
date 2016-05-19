@@ -3,7 +3,7 @@ describe('Unit: PortfolioList', function () {
   beforeEach(module('portfolioList'));
 
   describe('controller', function () {
-    var component, scope, $componentController, StockService;
+    var component, scope, $componentController, StockService, PortfolioService;
 
     beforeEach(inject(function($q, $rootScope, _$componentController_) {
       scope = $rootScope.$new();
