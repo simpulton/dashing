@@ -6,11 +6,6 @@ function PortfolioService($http, $q, ENDPOINT_URI, $rootScope) {
     return ENDPOINT_URI + model;
   }
 
-  service.cacheData = function(results) {
-    service.data = results.data;
-    return service.data;
-  };
-
   service.all = function () {
     return $http.get(getURL());
   };

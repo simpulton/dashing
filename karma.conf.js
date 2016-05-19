@@ -18,6 +18,8 @@ module.exports = function(config) {
       'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/angular-ui-router/release/angular-ui-router.min.js',
+      'node_modules/chart.js/dist/Chart.bundle.min.js',
+      'node_modules/angular-chart.js/dist/angular-chart.min.js',
       'src/app/**/*.html',
       'src/app/**/*.js',
       'src/app/**/*.spec.js'

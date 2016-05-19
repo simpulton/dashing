@@ -1,7 +1,7 @@
 function PortfolioListController(PortfolioService, $scope, $state) {
   var $ctrl = this;
 
-  function getPortfolios() {
+  $ctrl.getPortfolios = function () {
     PortfolioService.all()
       .then(function (portfolios) {
         $ctrl.portfolios = portfolios.data;
@@ -9,10 +9,10 @@ function PortfolioListController(PortfolioService, $scope, $state) {
       .catch(function (error) {
         console.error(error);
       })
-  }
+  };
 
   $ctrl.$onInit = function () {
-    getPortfolios();
+    $ctrl.getPortfolios();
     $ctrl.isHomeState = $state.is('home');
   };
 
@@ -22,6 +22,9 @@ function PortfolioListController(PortfolioService, $scope, $state) {
     PortfolioService.delete(id)
       .then(function () {
         getPortfolios();
+      })
+      .catch(function (err) {
+        console.error(err);
       });
   };
 

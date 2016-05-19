@@ -1,11 +1,10 @@
 describe('Unit: App', function() {
-  beforeEach(module('ui.router'));
   beforeEach(module('app'));
 
   describe('App Abstract Route', function() {
     var $state,
       $rootScope,
-      $urlRouter,
+      $location,
       state = 'app';
 
     beforeEach(inject(function(_$state_, $templateCache, _$rootScope_, _$location_) {
@@ -18,6 +17,14 @@ describe('Unit: App', function() {
       var config = $state.get(state);
       expect(config.abstract).toBeTruthy();
       expect(config.url).toBeUndefined();
+    });
+
+    it('should navigate to /home by default', function () {
+      $state.go('stocks');
+      $rootScope.$digest();
+      $location.path('doesNotExist');
+      $rootScope.$digest();
+      expect($state.current.name).toEqual('home');
     });
   });
 });
