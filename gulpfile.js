@@ -18,7 +18,8 @@ var gulp = require('gulp'),
     path = require('path'),
     Server = require('karma').Server,
     merge = require('merge-stream'),
-    angularFilesort = require('gulp-angular-filesort');
+    angularFilesort = require('gulp-angular-filesort'),
+    jsonServer = require('gulp-json-srv');
 
 var files = require('./gulp/gulp.config.js');
 
@@ -43,6 +44,7 @@ gulp.task('build', function (callback) {
 gulp.task('default', function (callback) {
     runSequence('build',
         'watch',
+        'server',
         'serve',
         callback);
 });
@@ -189,6 +191,13 @@ gulp.task('compile', function (callback) {
         'less-compile',
         'index-compile',
         callback);
+});
+
+gulp.task('server', function () {
+	jsonServer.start({
+		data: 'server/db.json',
+		port: 3000
+	});
 });
 
 gulp.task('test', function (done) {
