@@ -5,7 +5,7 @@ function SymbolsController(SymbolService) {
     SymbolService.all()
       .then(function (symbols) {
         $ctrl.symbols = symbols;
-        $ctrl.currentSymbol = _.find(symbols, {code: 'AAPL'}).code;
+        $ctrl.currentSymbol = SymbolService.getCurrentSymbol() || _.find(symbols, {code: 'AAPL'}).code;
         $ctrl.setCurrentSymbol($ctrl.currentSymbol);
       })
       .catch(function (err) {
