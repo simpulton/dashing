@@ -13,7 +13,6 @@ function config($stateProvider, $urlRouterProvider) {
 angular.module('app', [
   'ui.router',
   'common',
-  'stocks',
   'portfolios',
   'home',
   'templates-app'

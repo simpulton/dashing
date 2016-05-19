@@ -1,25 +1,18 @@
 {
   "portfolios": [
     {
-      "id": 1,
-      "name": "Portfolio the First",
-      "symbol": "MSFT",
-      "risk": 1,
-      "active": false
-    },
-    {
       "id": 2,
-      "name": "Portfolio the Second",
+      "name": "Portfolio the Second edited",
       "symbol": "AAPL",
       "risk": 3,
       "active": true
     },
     {
-      "id": 3,
-      "name": "Portfolio the Third",
-      "symbol": "MSFT",
-      "risk": 1,
-      "active": true
+      "name": "It's new!",
+      "risk": 2,
+      "symbol": "AAPL",
+      "active": true,
+      "id": 170
     }
   ],
   "symbols": [
