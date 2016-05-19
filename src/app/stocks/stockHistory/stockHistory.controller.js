@@ -8,7 +8,7 @@ function StockHistoryController(StockService, SymbolService, $filter, $scope, $s
     })
     .catch(function (error) {
       console.log(error);
-    })
+    });
   }
 
   $ctrl.$onInit = function () {
@@ -16,7 +16,7 @@ function StockHistoryController(StockService, SymbolService, $filter, $scope, $s
 
     if ($state.is('home')) {
       getStockHistory();
-    };
+    }
   };
 
   $scope.$on('setSymbol', function (event, symbol) {

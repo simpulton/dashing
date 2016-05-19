@@ -10,4 +10,4 @@ angular.module('stocks', [
   'symbols',
   'stockHistory'
 ])
-.config(config)
+.config(config);

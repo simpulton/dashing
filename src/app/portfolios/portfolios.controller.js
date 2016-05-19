@@ -8,7 +8,7 @@ function PortfoliosController(PortfolioService, $scope) {
       })
       .catch(function (error) {
         console.error(error);
-      })
+      });
   }
 
   function createPortfolio(portfolio) {
