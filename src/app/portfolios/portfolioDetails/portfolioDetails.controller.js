@@ -7,7 +7,7 @@ function PortfolioDetailsController($scope, $q, RiskService, SymbolService, Port
       symbol: '',
       risk: undefined,
       active: false
-    }
+    };
   }
 
   function getRisksAndSymbols() {

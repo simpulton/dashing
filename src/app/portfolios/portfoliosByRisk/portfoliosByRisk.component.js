@@ -5,7 +5,7 @@ var portfoliosByRisk = {
   },
   controller: 'PortfoliosByRiskController',
   templateUrl: 'portfolios/portfoliosByRisk/portfoliosByRisk.html'
-}
+};
 
 angular.module('portfoliosByRisk')
   .component('portfoliosByRisk', portfoliosByRisk);

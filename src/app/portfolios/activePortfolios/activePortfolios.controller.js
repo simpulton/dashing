@@ -17,7 +17,7 @@ function ActivePortfoliosController(PortfolioService, $scope) {
         position:'bottom'
       }
     };
-  }
+  };
 
   $ctrl.$onChanges = function () {
     groupByActive();

@@ -6,7 +6,7 @@ var portfolioDetails = {
   },
   controller: 'PortfolioDetailsController',
   templateUrl: 'portfolios/portfolioDetails/portfolioDetails.html'
-}
+};
 
 angular.module('portfolioDetails')
   .component('portfolioDetails', portfolioDetails);
