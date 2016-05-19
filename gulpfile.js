@@ -235,7 +235,7 @@ gulp.task('component', function () {
       upCaseName: cap(name),
       templatePath: destPath.replace('src/app/', '')
     }))
-    .pipe(rename((path) => {
+    .pipe(rename(function (path) {
       path.basename = path.basename.replace('temp', name);
     }))
     .pipe(gulp.dest(destPath));
