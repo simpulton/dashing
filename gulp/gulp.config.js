@@ -20,15 +20,15 @@ module.exports = {
         // our partial templates
         atpl: ['src/app/**/*.html', 'src/common/**/*.html'],
         // injected resources
-        tpl_src: [
+        tpl_assets: [
           "./build/vendor/jquery*.js",
           "./build/vendor/angular.min.js",
           "./build/vendor/Chart.js",
           "./build/vendor/**/*.js",
-          "./build/app/**/*.js",
           "./build/vendor/**/*.css",
           "./build/assets/css/**/*.css"
         ],
+        tpl_src: "./build/app/**/*.js",
         // the index.html
         html: ['src/index.html'],
         styles: ['src/**/*.less'],

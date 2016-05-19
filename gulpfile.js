@@ -133,14 +133,18 @@ gulp.task('less-compile', function () {
  from the "build" dir.
  */
 gulp.task('index', function () {
+  var tpl = merge(
+    gulp.src(files.app_files.tpl_assets),
+    gulp.src(files.app_files.tpl_src).pipe(angularFilesort())
+  );
 
-    return gulp.src('./src/index.html')
-        .pipe(inject(
-            gulp.src(files.app_files.tpl_src), {
-                ignorePath: 'build'
-            }))
-        .pipe(gulp.dest("./build"))
-        .pipe(browserSync.stream());
+  return gulp.src('./src/index.html')
+    .pipe(inject(
+      tpl, {
+        ignorePath: 'build'
+      }))
+    .pipe(gulp.dest("./build"))
+    .pipe(browserSync.stream());
 });
 
 /*
