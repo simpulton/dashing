@@ -1,17 +1,6 @@
 function PortfoliosByRiskController(PortfolioService, $scope) {
   var $ctrl = this;
 
-  function getPortfolios() {
-    PortfolioService.all()
-      .then(function (portfolios) {
-        $ctrl.portfolios = portfolios.data;
-        groupByRisk();
-      })
-      .catch(function (error) {
-        console.error(error);
-      })
-  }
-
   function groupByRisk() {
     $ctrl.data = [
       [
@@ -32,13 +21,11 @@ function PortfoliosByRiskController(PortfolioService, $scope) {
         position: 'bottom'
       }
     };
+  };
 
-    getPortfolios();
-  }
-
-  $scope.$on('refreshPortfolios', function () {
-    getPortfolios();
-  });
+  $ctrl.$onChanges = function () {
+    groupByRisk();
+  };
 }
 
 angular.module('portfoliosByRisk')

@@ -1,6 +1,8 @@
 var portfoliosByRisk = {
   selector: 'portfoliosByRisk',
-  bindings: {},
+  bindings: {
+    portfolios: '<'
+  },
   controller: 'PortfoliosByRiskController',
   templateUrl: 'portfolios/portfoliosByRisk/portfoliosByRisk.html'
 }

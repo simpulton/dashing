@@ -1,6 +1,8 @@
 var activePortfolios = {
   selector: 'activePortfolios',
-  bindings: {},
+  bindings: {
+    portfolios: '<'
+  },
   controller: 'ActivePortfoliosController',
   templateUrl: 'portfolios/activePortfolios/activePortfolios.html'
 }

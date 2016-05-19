@@ -1,17 +1,6 @@
 function ActivePortfoliosController(PortfolioService, $scope) {
   var $ctrl = this;
 
-  function getPortfolios() {
-    PortfolioService.all()
-      .then(function (portfolios) {
-        $ctrl.portfolios = portfolios.data;
-        groupByActive();
-      })
-      .catch(function (error) {
-        console.error(error);
-      })
-  }
-
   function groupByActive() {
     $ctrl.data = [
       _.filter($ctrl.portfolios, {active: true}).length,
@@ -28,12 +17,11 @@ function ActivePortfoliosController(PortfolioService, $scope) {
         position:'bottom'
       }
     };
-    getPortfolios();
   }
 
-  $scope.$on('refreshPortfolios', function () {
-    getPortfolios();
-  });
+  $ctrl.$onChanges = function () {
+    groupByActive();
+  };
 }
 
 angular.module('activePortfolios')

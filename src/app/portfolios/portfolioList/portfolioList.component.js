@@ -1,6 +1,10 @@
 var portfolioList = {
   selector: 'portfolioList',
-  bindings: {},
+  bindings: {
+    portfolios: '<',
+    select: '&',
+    delete: '&'
+  },
   controller: 'PortfolioListController',
   templateUrl: 'portfolios/portfolioList/portfolioList.html'
 }

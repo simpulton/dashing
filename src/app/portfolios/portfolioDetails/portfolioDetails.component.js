@@ -1,6 +1,9 @@
 var portfolioDetails = {
   selector: 'portfolioDetails',
-  bindings: {},
+  bindings: {
+    portfolio: '<',
+    save: '&'
+  },
   controller: 'PortfolioDetailsController',
   templateUrl: 'portfolios/portfolioDetails/portfolioDetails.html'
 }

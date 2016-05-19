@@ -5,9 +5,10 @@
   <div class="mdl-card__supporting-text">
     <ul class="mdl-list">
       <li ng-class="{clickable: !$ctrl.isHomeState}"
-          ng-click="$ctrl.setCurrentPortfolio(portfolio)"
+          ng-click="$ctrl.select({portfolio: portfolio})"
           class="mdl-list__item mdl-list__item--two-line"
           ng-repeat="portfolio in $ctrl.portfolios">
+
         <span class="mdl-list__item-primary-content">
           <span>{{portfolio.name}} | <span class="symbol">{{portfolio.symbol}}</span></span>
           <span class="mdl-list__item-sub-title">
@@ -17,8 +18,8 @@
             <span ng-if="!portfolio.active">Inactive</span>
           </span>
         </span>
-        <span class="mdl-list__item-secondary-content">
-          <a href="#" ng-click="$ctrl.deletePortfolio($event, portfolio.id)" class="mdl-list__item-secondary-action">
+        <span ng-if="!$ctrl.isHomeState" class="mdl-list__item-secondary-content">
+          <a href="" ng-click="$ctrl.delete({$event: $event, id: portfolio.id})" class="mdl-list__item-secondary-action">
             <i class="material-icons">cancel</i>
           </a>
         </span>
@@ -37,5 +38,4 @@
       </button>
     </div>
   </div>
-
 </div>

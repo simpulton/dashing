@@ -21,38 +21,12 @@ function PortfolioDetailsController($scope, $q, RiskService, SymbolService, Port
       });
   }
 
-  function createPortfolio() {
-    PortfolioService.create($ctrl.portfolio)
-      .then(function (response) {
-        PortfolioService.refreshPortfolios();
-        initPortfolio();
-      })
-      .catch(function (err) {
-        console.error(err);
-      });
-  }
-
-  function updatePortfolio() {
-    PortfolioService.update($ctrl.portfolio)
-      .then(function (response) {
-        PortfolioService.refreshPortfolios();
-        initPortfolio();
-      })
-      .catch(function (err) {
-        console.error(err);
-      });
-  }
-
-  $ctrl.savePortfolio = function () {
-    if (!$ctrl.portfolio.id) {
-      $ctrl.portfolio.id = _.random(10,1000);
-      createPortfolio();
-    } else {
-      updatePortfolio();
-    }
+  $ctrl.cancel = function () {
+    initPortfolio();
   };
 
-  $ctrl.cancel = function () {
+  $ctrl.savePortfolio = function () {
+    $ctrl.save({portfolio: $ctrl.portfolio});
     initPortfolio();
   };
 
@@ -61,9 +35,9 @@ function PortfolioDetailsController($scope, $q, RiskService, SymbolService, Port
     getRisksAndSymbols();
   };
 
-  $scope.$on('setPortfolio', function (event, portfolio) {
-    $ctrl.portfolio = portfolio;
-  });
+  $ctrl.$onChanges = function () {
+    $ctrl.portfolio = angular.copy($ctrl.portfolio);
+  };
 }
 
 angular.module('portfolioDetails')
