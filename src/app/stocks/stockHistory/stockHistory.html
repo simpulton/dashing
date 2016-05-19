@@ -14,9 +14,9 @@
         <tr ng-repeat="quote in $ctrl.history">
           <td class="mdl-data-table__cell--non-numeric">{{::quote.Symbol}}</td>
           <td>{{::quote.Date | date: 'MMM dd, yyyy'}}</td>
-          <td>{{::quote.Open | number}}</td>
-          <td>{{::quote.Close | number}}</td>
-          <td>{{::quote.Volume | number}}</td>
+          <td>{{::quote.Open}}</td>
+          <td>{{::quote.Close}}</td>
+          <td>{{::quote.Volume}}</td>
         </tr>
       </tbody>
     </table>
