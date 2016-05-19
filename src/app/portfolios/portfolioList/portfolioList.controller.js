@@ -13,12 +13,20 @@ function PortfolioListController(PortfolioService, $scope) {
 
   $ctrl.$onInit = function () {
     getPortfolios();
-  }
+  };
+
+  $ctrl.deletePortfolio = function (e, id) {
+    e.stopPropagation();
+
+    PortfolioService.delete(id)
+      .then(function () {
+        getPortfolios();
+      });
+  };
 
   $ctrl.setCurrentPortfolio = PortfolioService.setCurrentPortfolio;
 
   $scope.$on('refreshPortfolios', function () {
-    console.log('refreshing');
     getPortfolios();
   });
 }

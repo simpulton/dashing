@@ -20,7 +20,11 @@ function PortfolioService($http, $q, ENDPOINT_URI, $rootScope) {
   };
 
   service.update = function (portfolio) {
-    return $http.post(getURL() + '/' + portfolio.id, portfolio);
+    return $http.put(getURL() + '/' + portfolio.id, portfolio);
+  };
+
+  service.delete = function (id) {
+    return $http.delete(getURL() + '/' + id);
   };
 
   service.setCurrentPortfolio = function (portfolio) {
@@ -29,7 +33,7 @@ function PortfolioService($http, $q, ENDPOINT_URI, $rootScope) {
 
   service.refreshPortfolios = function () {
     $rootScope.$broadcast('refreshPortfolios');
-  }
+  };
 }
 
 angular.module('services')

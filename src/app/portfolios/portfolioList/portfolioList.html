@@ -9,12 +9,16 @@
           ng-repeat="portfolio in $ctrl.portfolios">
         <span class="mdl-list__item-primary-content">
           <span>{{portfolio.name}} | <span class="symbol">{{portfolio.symbol}}</span></span>
-          <span class="mdl-list__item-sub-title">Risk level: <strong>{{portfolio.risk}}</strong></span>
+          <span class="mdl-list__item-sub-title">
+            Risk level: <strong>{{portfolio.risk}}</strong>
+            |
+            <span ng-if="portfolio.active">Active</span>
+            <span ng-if="!portfolio.active">Inactive</span>
+          </span>
         </span>
         <span class="mdl-list__item-secondary-content">
-          <a class="mdl-list__item-secondary-action" href="#">
-            <i ng-if="portfolio.active" class="material-icons">lens</i>
-            <i ng-if="!portfolio.active" class="material-icons">panoramic_fish_eye</i>
+          <a ng-click="$ctrl.deletePortfolio($event, portfolio.id)" class="mdl-list__item-secondary-action">
+            <i class="material-icons">cancel</i>
           </a>
         </span>
       </li>
