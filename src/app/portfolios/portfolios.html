@@ -1,4 +1,5 @@
 <div class="mdl-grid">
+  <ui-view class="mdl-cell--12-col"></ui-view>
   <portfolio-list portfolios="$ctrl.portfolios"
    select="$ctrl.setCurrentPortfolio(portfolio)"
    delete="$ctrl.deletePortfolio($event, id)"
@@ -8,5 +9,4 @@
     <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
     <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
   </div>
-  <ui-view class="mdl-cell--12-col"></ui-view>
 </div>
