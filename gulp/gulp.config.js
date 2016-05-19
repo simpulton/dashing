@@ -40,6 +40,7 @@ module.exports = {
         // the node_modules/ needs to be prefixed by the task
         js: [
           'jquery/dist/jquery.min.js',
+          'lodash/lodash.min.js',
           'angular/angular.min.js',
           'angular-ui-router/release/angular-ui-router.min.js',
           'material-design-lite/material.min.js',

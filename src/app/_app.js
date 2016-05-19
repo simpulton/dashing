@@ -1,3 +1,5 @@
+var ENDPOINT_URI = 'http://localhost:3000';
+
 function config($stateProvider, $urlRouterProvider) {
   $stateProvider
   //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
@@ -16,4 +18,5 @@ angular.module('app', [
   'home',
   'templates-app'
 ])
+  .constant('ENDPOINT_URI', ENDPOINT_URI)
   .config(config);
