@@ -221,8 +221,8 @@ gulp.task('watch', function () {
     gulp.watch('./src/config/**/*.json', ['config-build']);
 });
 
-gulp.task('component', () => {
-  const cap = (val) => {
+gulp.task('component', function () {
+  const cap = function (val) {
     return val.charAt(0).toUpperCase() + val.slice(1);
   };
   const name = yargs.argv.name;
