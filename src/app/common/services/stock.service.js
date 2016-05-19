@@ -7,7 +7,6 @@ function StockService($http, $q) {
   }
 
   service.getStocks = function getStocks(symbol) {
-    console.log(getURL(symbol));
     return $http.get(getURL(symbol));
   };
 }

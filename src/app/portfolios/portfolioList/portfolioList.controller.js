@@ -1,4 +1,4 @@
-function PortfolioListController(PortfolioService, $scope) {
+function PortfolioListController(PortfolioService, $scope, $state) {
   var $ctrl = this;
 
   function getPortfolios() {
@@ -13,6 +13,7 @@ function PortfolioListController(PortfolioService, $scope) {
 
   $ctrl.$onInit = function () {
     getPortfolios();
+    $ctrl.isHomeState = $state.is('home');
   };
 
   $ctrl.deletePortfolio = function (e, id) {

@@ -16,7 +16,12 @@ function SymbolService($http, $q, ENDPOINT_URI, $rootScope) {
   };
 
   service.setCurrentSymbol = function (symbol) {
+    service.currentSymbol = symbol;
     $rootScope.$broadcast('setSymbol', symbol);
+  };
+
+  service.getCurrentSymbol = function () {
+    return service.currentSymbol;
   };
 }
 

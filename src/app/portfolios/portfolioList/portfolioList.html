@@ -4,7 +4,8 @@
   </div>
   <div class="mdl-card__supporting-text">
     <ul class="mdl-list">
-      <li ng-click="$ctrl.setCurrentPortfolio(portfolio)"
+      <li ng-class="{clickable: !$ctrl.isHomeState}"
+          ng-click="$ctrl.setCurrentPortfolio(portfolio)"
           class="mdl-list__item mdl-list__item--two-line"
           ng-repeat="portfolio in $ctrl.portfolios">
         <span class="mdl-list__item-primary-content">
@@ -17,21 +18,24 @@
           </span>
         </span>
         <span class="mdl-list__item-secondary-content">
-          <a ng-click="$ctrl.deletePortfolio($event, portfolio.id)" class="mdl-list__item-secondary-action">
+          <a href="#" ng-click="$ctrl.deletePortfolio($event, portfolio.id)" class="mdl-list__item-secondary-action">
             <i class="material-icons">cancel</i>
           </a>
         </span>
       </li>
     </ul>
   </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a ui-sref="portfolios" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Get Started
-    </a>
+  <div ng-if="$ctrl.isHomeState">
+    <div class="mdl-card__actions mdl-card--border">
+      <a ui-sref="portfolios" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Go to portfolios
+      </a>
+    </div>
+    <div class="mdl-card__menu">
+      <button ui-sref="portfolios" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </button>
+    </div>
   </div>
-  <div class="mdl-card__menu">
-    <button ui-sref="portfolios" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">keyboard_arrow_right</i>
-    </button>
-  </div>
+
 </div>
