@@ -2,7 +2,7 @@ var portfolioList = {
   selector: 'portfolioList',
   bindings: {},
   controller: 'PortfolioListController',
-  templateUrl: 'portfolios/portfolioList/portfolioList.html'
+  templateUrl: 'portfolioList/portfolioList.html'
 }
 
 angular.module('portfolioList')

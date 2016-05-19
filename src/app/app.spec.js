@@ -17,14 +17,15 @@ describe('Unit: App', function() {
       var config = $state.get(state);
       expect(config.abstract).toBeTruthy();
       expect(config.url).toBeUndefined();
+      expect(config.template).toBeUndefined();
     });
 
     it('should navigate to /home by default', function () {
-      $state.go('stocks');
+      $state.go('app.otherChild');
       $rootScope.$digest();
       $location.path('doesNotExist');
       $rootScope.$digest();
-      expect($state.current.name).toEqual('home');
+      expect($state.current.name).toEqual('app.child');
     });
   });
 });

@@ -1,32 +1,19 @@
-<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <div class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
     <header class="">
       <div class="mdl-layout__header-row">
         <span class="mdl-layout-title">Dashing</span>
-        <div class="mdl-layout-spacer"></div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-          <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-            <i class="material-icons">search</i>
-          </label>
-          <div class="mdl-textfield__expandable-holder">
-            <form ng-submit="$ctrl.doSearch()">
-              <input ng-model="$ctrl.search" class="mdl-textfield__input" type="text" id="search">
-            </form>
-            <label class="mdl-textfield__label" for="search">Enter your query...</label>
-          </div>
-        </div>
       </div>
     </header>
   </div>
-  <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
-    <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-      <a ui-sref="home" class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-      <a ui-sref="stocks" class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">trending_up</i>Stocks</a>
-      <a ui-sref="portfolios" class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">work</i>Portfolios</a>
-      <div class="mdl-layout-spacer"></div>
-    </nav>
-  </div>
   <main class="mdl-layout__content mdl-color--grey-100">
-    <ui-view></ui-view>
+    <div class="mdl-grid">
+      <div class="mdl-cell--6-col">
+        <stock-history></stock-history>
+      </div>
+      <div class="mdl-cell--6-col">
+        <portfolio-list></portfolio-list>
+      </div>
+    </div>
   </main>
 </div>

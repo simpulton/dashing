@@ -2,7 +2,7 @@ var stockHistory = {
   selector: 'stockHistory',
   bindings: {},
   controller: 'StockHistoryController',
-  templateUrl: 'stocks/stockHistory/stockHistory.html'
+  templateUrl: 'stockHistory/stockHistory.html'
 }
 
 angular.module('stockHistory')

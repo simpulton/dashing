@@ -5,17 +5,24 @@ function config($stateProvider, $urlRouterProvider) {
   //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
     .state('app', {
       abstract: true
+  })
+  .state('app.child', {
+    url: '/child',
+    template: '<child></child>'
+  })
+  .state('app.otherChild', {
+    url: '/other',
+    template: '<other></other>'
   });
 
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/child');
 }
 
 angular.module('app', [
   'ui.router',
   'common',
-  'stocks',
-  'portfolios',
-  'home',
+  'stockHistory',
+  'portfolioList',
   'templates-app'
 ])
   .constant('ENDPOINT_URI', ENDPOINT_URI)
