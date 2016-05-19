@@ -1,4 +1,4 @@
-function SymbolService($http, $q, ENDPOINT_URI) {
+function SymbolService($http, $q, ENDPOINT_URI, $rootScope) {
   var model = '/symbols',
       service = this;
 
@@ -13,6 +13,10 @@ function SymbolService($http, $q, ENDPOINT_URI) {
 
   service.all = function () {
     return service.data ? $q.when(service.data) : $http.get(getURL()).then(service.cacheData);
+  };
+
+  service.setCurrentSymbol = function (symbol) {
+    $rootScope.$broadcast('setSymbol', symbol);
   };
 }
 

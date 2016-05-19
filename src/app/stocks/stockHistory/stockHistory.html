@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="quote in $ctrl.data | limitTo: 200 | filter: $ctrl.query">
+        <tr ng-repeat="quote in $ctrl.history">
           <td class="mdl-data-table__cell--non-numeric">{{::quote.Symbol}}</td>
           <td>{{::quote.Date | date: 'MMM dd, yyyy'}}</td>
           <td>{{::quote.Open | number}}</td>

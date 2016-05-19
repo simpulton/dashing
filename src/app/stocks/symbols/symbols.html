@@ -4,33 +4,16 @@
   </div>
   <div class="mdl-card__supporting-text">
     <ul class="demo-list-control mdl-list">
-      <li class="mdl-list__item">
+      <li ng-repeat="symbol in $ctrl.symbols" class="mdl-list__item">
         <span class="mdl-list__item-primary-content">
-          Apple (AAPL)
+          {{symbol.entity}} ({{symbol.code}})
         </span>
         <span class="mdl-list__item-secondary-action">
-          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
-            <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="1" />
-          </label>
-        </span>
-      </li>
-      <li class="mdl-list__item">
-        <span class="mdl-list__item-primary-content">
-          Microsoft (MSFT)
-        </span>
-        <span class="mdl-list__item-secondary-action">
-          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-            <input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="2" checked />
-          </label>
-        </span>
-      </li>
-      <li class="mdl-list__item">
-        <span class="mdl-list__item-primary-content">
-          Google (GOOG)
-        </span>
-        <span class="mdl-list__item-secondary-action">
-          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-3">
-            <input type="radio" id="list-option-3" class="mdl-radio__button" name="options" value="3" />
+          <label class="mdl-radio">
+            <input ng-change="$ctrl.setCurrentSymbol($ctrl.currentSymbol)"
+                  ng-model="$ctrl.currentSymbol" type="radio"
+                  class="mdl-radio__button" name="symbol"
+                  ng-value="symbol.code" />
           </label>
         </span>
       </li>

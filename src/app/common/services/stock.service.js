@@ -1,14 +1,14 @@
 function StockService($http, $q) {
-  var model = 'http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("MSFT","AAPL","GOOG") and startDate = "2016-01-01" and endDate = "2016-05-17"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=',
+  var model = 'http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol = "${}" and startDate = "2016-01-01" and endDate = "2016-05-17"&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback=',
       service = this;
 
-  service.cacheData = function(results) {
-    service.stockData = results.data.query.results.quote;
-    return service.stockData;
-  };
+  function getURL(symbol) {
+    return model.replace('${}', symbol);
+  }
 
-  service.getStocks = function getStocks() {
-    return service.stockData ? $q.when(service.stockData) : $http.get(model).then(service.cacheData);
+  service.getStocks = function getStocks(symbol) {
+    console.log(getURL(symbol));
+    return $http.get(getURL(symbol));
   };
 }
 
