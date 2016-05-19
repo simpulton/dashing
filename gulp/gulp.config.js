@@ -23,6 +23,7 @@ module.exports = {
         tpl_src: [
           "./build/vendor/jquery*.js",
           "./build/vendor/angular.min.js",
+          "./build/vendor/Chart.js",
           "./build/vendor/**/*.js",
           "./build/app/**/*.js",
           "./build/vendor/**/*.css",
