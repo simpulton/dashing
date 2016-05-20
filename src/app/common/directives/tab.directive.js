@@ -26,9 +26,9 @@ function tab() {
       };
     	$ctrl.addTab($scope.tab);
     }
-  }
+  };
 }
 
 angular
 	.module('directives')
-  .directive('tab', tab)
+  .directive('tab', tab);
