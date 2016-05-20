@@ -1,12 +1,26 @@
 <div class="mdl-grid">
+  <ui-view class="mdl-cell--12-col"></ui-view>
   <portfolio-list portfolios="$ctrl.portfolios"
    select="$ctrl.setCurrentPortfolio(portfolio)"
    delete="$ctrl.deletePortfolio($event, id)"
    class="mdl-cell--4-col"></portfolio-list>
   <portfolio-details portfolio="$ctrl.currentPortfolio" save="$ctrl.savePortfolio(portfolio)" class="mdl-cell--4-col"></portfolio-details>
   <div class="mdl-cell--4-col">
-    <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
-    <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+    <div class="mdl-card mdl-shadow--2dp">
+      <tabs active="0">
+         <tab label="Active">
+           <heading>Active portfolios</heading>
+           <content>
+             <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
+           </content>
+         </tab>
+         <tab label="Risk">
+           <heading>Portfolios by risk</heading>
+           <content>
+             <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+           </content>
+         </tab>
+      </tabs>
+    </div>
   </div>
-  <ui-view class="mdl-cell--12-col"></ui-view>
 </div>
