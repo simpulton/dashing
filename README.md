@@ -38,3 +38,6 @@ gulp
 Testing is accomplished with Gulp running Karma. The testing environment is specified in `karma.conf.js`.
 
 To run the unit tests, simply run `gulp test`. This will start karma using the config file and run all the unit tests in `src/app`. To test a new feature, just add a `.spec.js` file in the same directory.
+
+## Generating components
+There is a gulp command that allows us to generate a component, complete with the component config, controller, template, styles, and spec. The command is `gulp component --name <NAME> --parent <PATH-RELATIVE-TO-APP>`.
