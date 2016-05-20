@@ -1,25 +1,3 @@
-function tab() {
-	return {
-  	restrict: 'E',
-    scope: {
-    	label: '@'
-    },
-    require: '^tabs',
-    transclude: true,
-    template: `
-    	<div ng-if="tab.selected">
-      	<div ng-transclude></div>
-      </div>`,
-    link: function ($scope, $element, $attrs, $ctrl) {
-    	$scope.tab = {
-      	label: $scope.label,
-      	selected: false
-      };
-    	$ctrl.addTab($scope.tab);
-    }
-  }
-}
-
 function tabs() {
     return {
       restrict: 'E',
@@ -54,6 +32,5 @@ function tabs() {
 }
 
 angular
-	.module('common')
-  .directive('tab', tab)
+	.module('directives')
   .directive('tabs', tabs);

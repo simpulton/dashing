@@ -9,10 +9,16 @@
     <div class="mdl-card mdl-shadow--2dp">
       <tabs active="0">
          <tab label="Active">
-          <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
+           <heading>Active portfolios</heading>
+           <content>
+             <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
+           </content>
          </tab>
          <tab label="Risk">
-          <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+           <heading>Portfolios by risk</heading>
+           <content>
+             <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+           </content>
          </tab>
       </tabs>
     </div>

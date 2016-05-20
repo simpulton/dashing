@@ -1,1 +1,1 @@
-angular.module('common', ['services', 'performance']);
+angular.module('common', ['services', 'performance', 'directives']);
