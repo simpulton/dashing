@@ -20,14 +20,14 @@ function tabs() {
       link: function ($scope, $element, $attrs, $ctrl) {
       	$ctrl.selectTab($attrs.active || 0);
       },
-      template: `
-      	<div class="mdl-tabs is-upgraded">
-        	<div class="mdl-tabs__tab-bar">
-          	<a ng-class="{'is-active': tab.selected}" ng-repeat="tab in tabs.tabs" class="mdl-tabs__tab" href="" ng-bind="tab.label" ng-click="tabs.selectTab($index);"></a>
-          </div>
-        	<div class="tabs__content" ng-transclude></div>
-        </div>
-      `
+      template: [
+      	'<div class="mdl-tabs is-upgraded">',
+        '	<div class="mdl-tabs__tab-bar">',
+        '  	<a ng-class="{\'is-active\': tab.selected}" ng-repeat="tab in tabs.tabs" class="mdl-tabs__tab" href="" ng-bind="tab.label" ng-click="tabs.selectTab($index);"></a>',
+        '  </div>',
+        '	<div class="tabs__content" ng-transclude></div>',
+        '</div>'
+      ].join('')
     };
 }
 
