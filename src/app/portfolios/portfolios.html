@@ -6,7 +6,15 @@
    class="mdl-cell--4-col"></portfolio-list>
   <portfolio-details portfolio="$ctrl.currentPortfolio" save="$ctrl.savePortfolio(portfolio)" class="mdl-cell--4-col"></portfolio-details>
   <div class="mdl-cell--4-col">
-    <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
-    <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+    <div class="mdl-card mdl-shadow--2dp">
+      <tabs active="0">
+         <tab label="Active">
+          <active-portfolios portfolios="$ctrl.portfolios"></active-portfolios>
+         </tab>
+         <tab label="Risk">
+          <portfolios-by-risk portfolios="$ctrl.portfolios"></portfolios-by-risk>
+         </tab>
+      </tabs>
+    </div>
   </div>
 </div>
