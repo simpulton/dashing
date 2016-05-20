@@ -1,11 +1,13 @@
 <h3>Account</h3>
 <hr>
 
-<input type="checkbox" ng-model="$ctrl.currentAccount.active">
+<strong>PARENT!</strong>
+
+<pre>{{$ctrl.currentAccount | json}}</pre>
 
 <hr>
 
-<account-details ng-if="$ctrl.showAccount($ctrl.currentAccount)"
+<account-details
 	account="$ctrl.currentAccount"
 	title="{{$ctrl.currentAccount.title}}"
 	dance="$ctrl.kickTheJams(jam)"></account-details>
