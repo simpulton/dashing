@@ -19,7 +19,12 @@ var gulp = require('gulp'),
     Server = require('karma').Server,
     merge = require('merge-stream'),
     angularFilesort = require('gulp-angular-filesort'),
-    jsonServer = require('gulp-json-srv');
+    jsonServer = require('gulp-json-srv'),
+    notify = require('gulp-notify')
+    map = require('map-stream');
+    path = require('path');
+    events = require('events');
+    emitter = new events.EventEmitter();
 
 var files = require('./gulp/gulp.config.js');
 
@@ -194,10 +199,10 @@ gulp.task('compile', function (callback) {
 });
 
 gulp.task('server', function () {
-	jsonServer.start({
-		data: 'server/db.json',
-		port: 3000
-	});
+    jsonServer.start({
+        data: 'server/db.json',
+        port: 3000
+    });
 });
 
 gulp.task('test', function (done) {
@@ -209,7 +214,9 @@ gulp.task('test', function (done) {
 gulp.task('lint', function() {
     return gulp.src(files.app_files.js)
         .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+        .pipe(jshint.reporter('default'))
+        .pipe(jsHintErrorReporter()) /* Emits error for notify to pick up below */
+        .on('error', handleErrors);
 });
 
 gulp.task('watch', function () {
@@ -240,3 +247,38 @@ gulp.task('component', function () {
     }))
     .pipe(gulp.dest(destPath));
 });
+
+/**
+ *  Growl style notifications using gulp-notify
+ **/
+var handleErrors = function () {
+  var args = Array.prototype.slice.call(arguments);
+
+  // Send error to notification center with gulp-notify
+  notify.onError({
+    title: "Compile Error",
+    message: "<%= error %>"
+  }).apply(this, args);
+
+  // Keep gulp from hanging on this task
+  this.emit('end');
+};
+var jsHintErrorReporter = function ( file, callback ) {
+  return map(function ( file, callback ) {
+    if (!file.jshint.success) {
+      file.jshint.results.forEach(function ( error ) {
+        if (error) {
+          var msg = [
+            path.basename(file.path),
+            'Line: ' + error.error.line,
+            'Reason: ' + error.error.reason
+          ];
+
+          emitter.emit('error', new Error(msg.join('\n')));
+        }
+      });
+    }
+
+    callback(null, file);
+  });
+};
