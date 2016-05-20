@@ -1,0 +1,11 @@
+<div>
+  <h1>Mo Money!</h1>
+</div>
+
+<hr>
+<pre>{{$ctrl.funds | json }}</pre>
+<hr>
+
+
+<funddetails name="{{$ctrl.fundName}}"
+  select="$ctrl.selectFund()"></funddetails>

@@ -16,6 +16,7 @@ angular.module('app', [
   'stocks',
   'portfolios',
   'home',
+  'funds',
   'templates-app'
 ])
   .constant('ENDPOINT_URI', ENDPOINT_URI)
