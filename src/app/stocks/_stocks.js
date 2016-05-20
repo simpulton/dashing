@@ -1,8 +1,8 @@
 function config($stateProvider) {
   $stateProvider
-    .state('stocks', {
+    .state('app.stocks', {
       url: '/stocks',
-      template: '<stocks></stocks>'
+      views: {'@': { template: '<stocks></stocks>' }}
     });
 }
 

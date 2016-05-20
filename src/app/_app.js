@@ -4,7 +4,8 @@ function config($stateProvider, $urlRouterProvider) {
   $stateProvider
   //abstract state serves as a PLACEHOLDER or NAMESPACE for application states
     .state('app', {
-      abstract: true
+      abstract: true,
+      url: ''
   });
 
   $urlRouterProvider.otherwise('/home');

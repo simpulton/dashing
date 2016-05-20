@@ -1,10 +1,14 @@
 function config($stateProvider) {
   $stateProvider
-    .state('portfolios', {
+    .state('app.portfolios', {
       url: '/portfolios',
-      template: '<portfolios></portfolios>'
+      views: {
+        '@': {
+          template: '<portfolios></portfolios>'
+        }
+      }
     })
-    .state('portfolios.performance', {
+    .state('app.portfolios.performance', {
       url: '/performance',
       template: '<performance></performance>'
     });

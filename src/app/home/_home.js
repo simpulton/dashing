@@ -1,8 +1,8 @@
 function config($stateProvider) {
   $stateProvider
-    .state('home', {
+    .state('app.home', {
       url: '/home',
-      template: '<home></home>'
+      views: {'@': { template: '<home></home>' }}
   });
 }
 
